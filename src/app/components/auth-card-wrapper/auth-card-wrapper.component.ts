@@ -8,7 +8,7 @@ import {
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { NgIf, NgOptimizedImage } from '@angular/common';
+import { NgIf } from '@angular/common';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
@@ -23,7 +23,6 @@ import {FormGroup, ReactiveFormsModule} from '@angular/forms';
     RouterLink,
     MatIconButton,
     MatIcon,
-    NgOptimizedImage,
     NgIf,
     MatPrefix,
     MatSuffix,

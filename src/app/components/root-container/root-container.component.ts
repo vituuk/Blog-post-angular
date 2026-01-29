@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../layouts/header/header.component';
-import { FooterComponent } from '../layouts/footer/footer.component';
 import { fadeSlideAnimation } from '../../animations/route-animations';
 
 @Component({
   selector: 'app-root-container',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './root-container.component.html',
   styleUrl: './root-container.component.scss',
   animations: [fadeSlideAnimation],

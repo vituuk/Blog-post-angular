@@ -1,0 +1,39 @@
+<div class="card-container mb-2">
+  <div class="card-header d-flex align-items-center mb-2">
+    <img
+      [src]="article.author?.avatar"
+      alt="Author avatar"
+      class="avatar me-2"
+    />
+    <div class="author-info">
+      <span class="author-name">{{ article.author?.name }}</span>
+      <span class="author-username">{{ getAuthorUsername() }}</span>
+      <span class="post-date">{{ getFormattedDate() }}</span>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <div class="d-flex justify-content-between gap-2">
+      <div class="d-flex flex-column">
+        <h3 class="card-title">{{ article.title }}</h3>
+        <p class="card-description">{{ article.des }}</p>
+      </div>
+      <div class="card-image" *ngIf="article.thumbnail">
+        <img [src]="article.thumbnail" [alt]="article.title" class=""/>
+      </div>
+    </div>
+
+    <div
+      class="card-footer d-flex justify-content-between align-items-center "
+    >
+      <div class="card-tags" *ngIf="article.tags && article.tags.length > 0">
+        <span class="tag" *ngFor="let tag of article.tags">#{{ tag }}</span>
+      </div>
+      <div class="card-stats d-flex align-items-center gap-3">
+        <span class="likes" *ngIf="article.activity">
+          <i class="bi bi-heart"></i> {{ article.activity.total_likes }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

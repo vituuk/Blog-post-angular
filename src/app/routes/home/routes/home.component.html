@@ -1,0 +1,34 @@
+<div class="home-container pt-5">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Main Content Area (Left Side) -->
+      <div class="col-lg-8 col-md-12 main-content">
+        <div class="home-tab mb-4">
+          <button #tabBtn class="tab-btn ps-4" >
+            {{ selectedCategory || "Home" }}
+          </button>
+          <hr [style.width.px]="tabBtn.offsetWidth + 25"/>
+        </div>
+        <div class="articles-feed">
+          <app-card
+            *ngFor="let article of articles"
+            [article]="article"
+            class="d-block mb-2"
+          >
+          </app-card>
+        </div>
+      </div>
+
+      <!-- Sidebar (Right Side) -->
+      <div class="col-lg-4 col-md-12 sidebar">
+        <div class="sticky-sidebar">
+          <app-story-interest
+            class="d-block"
+            (categorySelected)="onCategoryFilter($event)"
+          ></app-story-interest>
+          <app-trending class="d-block"></app-trending>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

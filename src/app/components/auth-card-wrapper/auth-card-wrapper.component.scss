@@ -1,0 +1,173 @@
+::ng-deep .auth-form {
+  .mat-mdc-form-field {
+    // Hide the default border outline
+    .mdc-notched-outline {
+      border: none !important;
+      display: none !important;
+    }
+
+    .mdc-text-field {
+      display: flex !important;
+      align-items: center !important;
+    }
+
+
+    // Remove bottom spacing between form fields
+    .mat-mdc-form-field-subscript-wrapper {
+      height: 0 !important;
+      padding: 8px 0 !important;
+    }
+
+    // Center align the prefix icon
+    .mat-mdc-form-field-icon-prefix {
+      > .mat-icon {
+        margin-right: 8px !important;
+        display: flex !important;
+        color: var(--text-primary) !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+    }
+
+    // Style the password visibility toggle button
+    .mat-mdc-form-field-icon-suffix {
+      > .mat-icon {
+        padding: 0 !important;
+      }
+
+      .mat-mdc-icon-button {
+        .mat-icon {
+          padding: 0 !important;
+          color: #6b6b6b !important;
+          font-size: 18px !important;
+          width: 20px !important;
+          height: 20px !important;
+        }
+      }
+    }
+  }
+}
+
+.auth-card-wrapper {
+  //min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  padding: 20px 0 60px 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  //gap: 16px;
+}
+
+.field-icon {
+  color: #6b6b6b;
+  margin-right: 8px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.sign-in-btn {
+  background-color: var(--signin-bg) !important;
+  color: var(--bg-primary) !important;
+  border-radius: 28px;
+  font-size: 14px;
+  text-transform: none;
+  margin-top: 8px;
+  padding: 20px 22px;
+
+  &:hover {
+    //background-color: #1a1a1a;
+  }
+}
+
+.divider {
+  position: relative;
+  margin: 32px 0;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+  }
+}
+
+.divider-text {
+  position: relative;
+  display: inline-block;
+  padding: 0 16px;
+  background-color: var(--bg-primary);
+  color: #9e9e9e;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.google-btn {
+  padding: 11px 80px;
+  //opacity: 0.8;
+  font-weight: 400;
+  margin: auto;
+  border-radius: 24px;
+  background-color: var(--signin-bg);
+  color: var(--bg-primary) !important;
+  font-size: 16px;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: none;
+
+  &:hover {
+    background-color: var(--hover-sign-bg) !important;
+  }
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+.footer-link {
+  color: var(--text-primary);
+  text-decoration: underline;
+  font-weight: 500;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 32px 24px;
+  }
+
+  .auth-title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+}

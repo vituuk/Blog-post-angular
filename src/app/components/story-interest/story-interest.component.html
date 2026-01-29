@@ -1,0 +1,14 @@
+<div class="story-interest-container">
+  <h4 class="section-title">Stories from all Interest</h4>
+  <div class="categories-grid">
+    <button
+      *ngFor="let category of categories"
+      class="category-btn"
+      [class.active]="isSelected(category.name_en)"
+      [attr.data-category]="category.name_en.toLowerCase()"
+      (click)="onCategoryClick(category.name_en)"
+    >
+      {{ category.name_en }}
+    </button>
+  </div>
+</div>

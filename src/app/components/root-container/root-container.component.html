@@ -1,0 +1,12 @@
+<div class="min-vh-100 d-flex flex-column">
+  <app-header></app-header>
+  <main
+    class="flex-grow-1 c-container my-3 px-5 pt-4 d-flex flex-column"
+    style="position: relative"
+  >
+    <div [@routeAnimations]="getRouteAnimationData()">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <!--  <app-footer></app-footer>-->
+</div>

@@ -1,0 +1,130 @@
+<div
+  class="header-wrapper w-100 z-3 position-fixed top-0    "
+  [class.shadow-sm]="isScrolled"
+>
+  <header id="app-header" class="c-container">
+    <div
+      class=" pt-3 px-5 pb-0 pb-lg-3 d-flex gap-3 align-items-center justify-content-between "
+    >
+      <div class="d-flex justify-content-between align-items-center gap-4">
+        <a routerLink="/" class="logo-wrapper text-decoration-none">
+          <img
+            [ngSrc]="
+              currentTheme() === 'dark'
+                ? '/icons/logo-light.png'
+                : '/icons/logo-dark.png'
+            "
+            alt="app-logo"
+            width="38"
+            height="38"
+          />
+        </a>
+        <form class="search-field-wrapper position-relative d-none d-lg-block">
+          <img
+            [ngSrc]="
+              currentTheme() === 'dark'
+                ? '/icons/search-white.svg'
+                : '/icons/search.svg'
+            "
+            alt="search"
+            width="20"
+            height="20"
+            class="position-absolute search-icon top-50 translate-middle-y end-0 me-3 z-1"
+          />
+          <!--          <input name="q" type="text" [placeholder]="'search' | translate"-->
+          <input
+            name="q"
+            type="text"
+            placeholder="Search"
+            [class]="
+              'border border-0 rounded-pill ' +
+              (isScrolled ? 'onScrolled' : null)
+            "
+            autocomplete="off"
+          />
+        </form>
+      </div>
+      <div
+        class="action-wrapper d-flex justify-content-end align-items-center gap-2 gap-lg-4"
+      >
+        <button
+          mat-icon-button
+          class="d-block d-lg-none"
+          (click)="openDialog()"
+        >
+          <img
+            ngSrc="/icons/search.svg"
+            alt="search"
+            width="18"
+            height="18"
+            class="w-75"
+          />
+        </button>
+        <div
+          class="d-flex gap-1  write justify-content-center opacity-50 align-items-center"
+        >
+          <p>Write</p>
+          <img
+            [ngSrc]="currentTheme() === 'dark' ? '/icons/edit-white.svg' : '/icons/edit.svg'"
+            alt=""
+            width="20"
+            height="20"
+          />
+        </div>
+        <app-toggle-swtiches/>
+
+        @if (!user()) {
+<!--          <button-->
+<!--            class="fw-normal action-btn align-content-center signin"-->
+<!--            routerLink="/auth/signin"-->
+<!--            [queryParams]="{ returnUrl }"-->
+<!--          >-->
+          <button
+            class="fw-normal action-btn align-content-center signin"
+            routerLink="/auth/signin"
+          >
+            Sign In
+          </button>
+
+          <button class="action-btn signup" routerLink="/auth/signup">
+            Sign Up
+          </button>
+        } @else {
+          <button class="action-btn me-2" routerLink="/bookmark">
+            <img ngSrc="/icons/saved.svg" alt="saved" width="20" height="20"/>
+            <span class="d-none d-lg-block">{{ "saved" | translate }}</span>
+          </button>
+          <img
+            [src]="avatar"
+            alt=""
+            width="46"
+            height="46"
+            class="rounded-circle object-fit-cover"
+            [matMenuTriggerFor]="menu"
+            (error)="onImageError()"
+          />
+          <mat-menu
+            #menu="matMenu"
+            xPosition="before"
+            class="mt-2 bg-white shadow"
+          >
+            <p class="px-3" readonly="true">{{ user().name }}</p>
+            <button mat-menu-item (click)="onLogout()">
+              <mat-icon size="3">logout</mat-icon>
+              <span>{{ "log_out" | translate }}</span>
+            </button>
+          </mat-menu>
+        }
+      </div>
+    </div>
+    <!--    <div-->
+    <!--      class="menu-wrapper mx-0 mx-lg-3 px-3 px-lg-0 d-flex flex-nowrap overflow-y-auto gap-2 gap-lg-4 justify-content-lg-center align-items-center py-2 py-lg-0 list-unstyled"-->
+    <!--      [class.border-bottom-0]="isScrolled">-->
+    <!--      <button *ngFor="let menu of menus" class="menu-item flex-shrink-0 target-link"-->
+    <!--              [class.active]="checkIsActive(activeMenuRoute, menu.route)"-->
+    <!--              (click)="onMenuClick(menu.route, menu._id)">{{ menu.title[currentLang()] }}-->
+    <!--      </button>-->
+    <!--    </div>-->
+  </header>
+  <mat-divider ></mat-divider>
+</div>

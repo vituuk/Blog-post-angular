@@ -1,0 +1,32 @@
+$screenXS: "only screen and (max-width: 575px)";
+$screenSM: "only screen and (max-width: 767px)";
+$screenMD: "only screen and (max-width: 991px)";
+$screenLG: "only screen and (max-width: 1199px)";
+$screenXL: "only screen and (min-width: 1200px)";
+$top-height: 65px;
+$primary-color: #0575E6;
+$grey-color: #73777b;
+$secondary-color: #f5f5f5;
+$status-color: #0dc269;
+$white-color: #ffffff;
+$black-color: #000000;
+$active-color: #20b823;
+$inactive-color: #9c9c9c;
+$pending-color: #e58616;
+$returned-color: #ccc911;
+$rejected-color: #dd2323;
+$canceled-color: #73777b;
+$draft-color: #ffcb42;
+
+@mixin disable-select {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}

@@ -1,0 +1,54 @@
+<footer id="app-footer">
+  <div class="c-container px-3 py-5 bg-white info-wrapper row g-0 justify-content-between">
+    <div class="col-12 col-md-6 col-lg-8 col-xl-9 pe-0 pe-md-5">
+      <div class="d-flex gap-3 align-items-center">
+        <img ngSrc="/imgs/app-logo.svg" alt="app-logo" width="32" height="auto"/>
+        <h3 class="fw-bold fs-5 m-0">LTNG SPORTS</h3>
+      </div>
+      <p>High level experience in web design and <br class="d-none d-lg-block">development knowledge, producing quality
+        work.</p>
+    </div>
+    <div class="mt-3 mt-md-0 col-12 col-md-6 col-lg-4 col-xl-3">
+      <div class="row g-0">
+        <div class="col-12 col-md-6 text-center text-sm-start">
+          <h4 class="title">Company</h4>
+          <p class="d-inline-block w-auto pb-2 target-link dark mb-1">About Us</p>
+          <br>
+          <p class="d-inline-block w-auto pb-2 target-link dark mb-1">Team</p>
+          <br>
+          <p class="d-inline-block w-auto pb-2 target-link dark mb-1">Contact Us</p>
+        </div>
+        <div class="col-12 col-md-6 mt-3 mt-md-0 text-center text-sm-start">
+          <div>
+            <h4 class="title">Follow Us</h4>
+            <div class="social-wrapper mt-3 d-flex gap-3 flex-wrap justify-content-center justify-content-sm-start">
+              <a *ngFor="let social of socials" [href]="social.url" target="_blank">
+                <img [ngSrc]="social.icon" [alt]="social.icon" width="24" height="24"/>
+              </a>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h4 class="title">Call Us</h4>
+            <p class="d-inline-flex w-auto target-link pb-2 dark">{{ phoneNumber }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-primary">
+    <div
+      class="c-container px-3 py-2 row g-0 justify-content-center justify-content-lg-between align-items-center text-white">
+      <div class="order-2 order-md-1 col-12 col-md-6 col-lg-8 col-xl-9 text-center text-md-start">
+        <p>© {{ year }} All Rights Reserved</p>
+      </div>
+      <div class="order-1 order-md-2 col-12 col-md-6 col-lg-4 col-xl-3">
+        <div
+          class="d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-md-start gap-2 gap-sm-3 list-unstyled">
+          <p class="target-link light py-2"> Privacy Policy</p>
+          <p class="target-link light py-2"> Terms of Use</p>
+          <p class="target-link light py-2"> Site Map</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

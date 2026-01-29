@@ -1,0 +1,14 @@
+app-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+
+  @media screen and (max-width: 992px) {
+    transition: all 0.5s ease;
+
+    &.hide {
+      transform: translateY(-164px);
+    }
+  }
+}

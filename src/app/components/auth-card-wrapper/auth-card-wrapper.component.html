@@ -1,0 +1,62 @@
+<div class="auth-card-wrapper pt-5">
+  <div class="auth-card">
+    <h1 class="auth-title">{{ title }}</h1>
+
+    <form class="auth-form">
+      <mat-form-field
+        *ngIf="btnText === 'Sign Up'"
+        appearance="outline"
+        class="custom-field"
+      >
+    <mat-icon matPrefix class="field-icon">person_outline</mat-icon>
+        <input type="text" matInput placeholder="Full Name" name="fullName" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="custom-field">
+        <mat-icon matPrefix class="field-icon">mail_outline</mat-icon>
+        <input type="email" matInput placeholder="Email" name="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-field">
+        <mat-icon matPrefix class="field-icon">lock_outline</mat-icon>
+        <input
+          [type]="hidePassword() ? 'password' : 'text'"
+          matInput
+          placeholder="Password"
+          name="password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="togglePasswordVisibility($event)"
+        >
+          <mat-icon
+            >{{ hidePassword() ? "visibility_off" : "visibility" }}
+          </mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        class="fw-medium mt-3 mx-auto sign-in-btn"
+        type="submit"
+      >
+        {{ btnText }}
+      </button>
+    </form>
+
+    <div class="divider opacity-50">
+      <span class="divider-text fw-bold">OR</span>
+    </div>
+
+    <button class="google-btn" type="button">
+      <img src="/icons/google.png" alt="Google" class="google-icon" />
+      <span> Continue With Google </span>
+    </button>
+
+    <p class="footer-text">
+      Don't have and account ?
+      <a routerLink="/auth/sign-up" class="footer-link">Join us Now</a>
+    </p>
+  </div>
+</div>

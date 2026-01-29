@@ -1,3 +1,9 @@
-<app-auth-card-wrapper [title]="title"  [btnText]="btnText" >
-
+<app-auth-card-wrapper
+  [title]="title"
+  [btnText]="btnText"
+  [form]="form"
+  [isSignUp]="true"
+  (formSubmitted)="onSubmit()"
+  (googleClicked)="onGoogle()"
+>
 </app-auth-card-wrapper>

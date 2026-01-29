@@ -20,9 +20,9 @@ import {BaseCrudService} from '../../../services/base-crud.service';
 import {CategoryProps} from '../../../types/category';
 import {LanguageEnum} from '../../../types/enums/language.enum';
 import {ToggleSwtichesComponent} from '../../toggle-swtiches/toggle-swtiches.component';
-import {MatDivider} from '@angular/material/divider';
 import {ThemeService} from '../../../services/theme.service';
 import {Theme} from '../../../types/theme';
+import {MatDivider} from '@angular/material/divider';
 
 const MENUS: MenuItemModel[] = [
   {

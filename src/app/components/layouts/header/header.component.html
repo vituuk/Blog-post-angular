@@ -94,21 +94,30 @@
             <img ngSrc="/icons/saved.svg" alt="saved" width="20" height="20"/>
             <span class="d-none d-lg-block">{{ "saved" | translate }}</span>
           </button>
-          <img
-            [src]="avatar"
-            alt=""
-            width="46"
-            height="46"
-            class="rounded-circle object-fit-cover"
-            [matMenuTriggerFor]="menu"
-            (error)="onImageError()"
-          />
+          <button class="profile-btn d-flex align-items-center gap-2" [matMenuTriggerFor]="menu">
+            <img
+              [src]="avatar"
+              alt=""
+              width="46"
+              height="46"
+              class="rounded-circle object-fit-cover"
+              (error)="onImageError()"
+            />
+            <span class="d-none d-lg-block text-start">
+              <div class="fw-semibold">{{ user()?.name }}</div>
+              <small class="text-muted">{{ user()?.email }}</small>
+            </span>
+          </button>
           <mat-menu
             #menu="matMenu"
             xPosition="before"
             class="mt-2 bg-white shadow"
           >
-            <p class="px-3" readonly="true">{{ user().name }}</p>
+            <div class="px-3 py-2">
+              <div class="fw-semibold">{{ user()?.name }}</div>
+              <small class="text-muted">{{ user()?.email }}</small>
+            </div>
+            <mat-divider></mat-divider>
             <button mat-menu-item (click)="onLogout()">
               <mat-icon size="3">logout</mat-icon>
               <span>{{ "log_out" | translate }}</span>

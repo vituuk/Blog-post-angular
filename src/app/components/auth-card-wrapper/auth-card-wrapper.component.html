@@ -2,18 +2,18 @@
   <div class="auth-card">
     <h1 class="auth-title">{{ title }}</h1>
 
-    <form class="auth-form">
+    <form class="auth-form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <mat-form-field
-        *ngIf="btnText === 'Sign Up'"
+        *ngIf="isSignUp"
         appearance="outline"
         class="custom-field"
       >
     <mat-icon matPrefix class="field-icon">person_outline</mat-icon>
-        <input type="text" matInput placeholder="Full Name" name="fullName" />
+        <input type="text" matInput placeholder="Full Name" formControlName="name" />
       </mat-form-field>
       <mat-form-field appearance="outline" class="custom-field">
         <mat-icon matPrefix class="field-icon">mail_outline</mat-icon>
-        <input type="email" matInput placeholder="Email" name="email" />
+        <input type="email" matInput placeholder="Email" formControlName="username" />
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-field">
@@ -22,7 +22,7 @@
           [type]="hidePassword() ? 'password' : 'text'"
           matInput
           placeholder="Password"
-          name="password"
+          formControlName="password"
         />
         <button
           mat-icon-button
@@ -49,14 +49,14 @@
       <span class="divider-text fw-bold">OR</span>
     </div>
 
-    <button class="google-btn" type="button">
+    <button class="google-btn" type="button" (click)="onGoogleClick()">
       <img src="/icons/google.png" alt="Google" class="google-icon" />
       <span> Continue With Google </span>
     </button>
 
     <p class="footer-text">
       Don't have and account ?
-      <a routerLink="/auth/sign-up" class="footer-link">Join us Now</a>
+      <a routerLink="/auth/signup" class="footer-link">Join us Now</a>
     </p>
   </div>
 </div>
